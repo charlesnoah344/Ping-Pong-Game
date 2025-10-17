@@ -36,6 +36,7 @@ public partial class MainWindowViewModel : GameBase
     protected override void Tick()
     {
         ball.Tick();
+        //GESTION DES BOUTONS AU CLAVIER POUR DEPLACER LES RACKETS
         //Racket Gauche
         if (Keyboard.Keys.Contains(Key.A))
         {
@@ -67,12 +68,12 @@ public partial class MainWindowViewModel : GameBase
         }
 
     
-
-        if (ball.Location.X >= Width - 100) //Droite
+        //INVERSION DU SENS DE LA VITESSE EN CAS DE COLLISION AVEC UNE RAQUETTE
+        if (ball.Location.X == r_racket.Location.X && ball.Location.Y == r_racket.Location.Y) // Racket Droite
         {
             ball.ChangeVelocity();
         }
-        if (ball.Location.X <=35) //Gauche
+        if (ball.Location.X == l_racket.Location.X && ball.Location.Y == l_racket.Location.Y) //Gauche
         {
             ball.ChangeVelocity();
         }
