@@ -21,8 +21,9 @@ public partial class Ball : GameObject {
     }
     public void ChangeDirection_racket(double deltaAngleDegrees = 45)
     {
+        double currentAngle = Math.Atan2(Velocity.Y, Velocity.X); // en radians
         // Convertir l'angle en radians
-        double deltaAngleRadians = Math.PI * deltaAngleDegrees / 180.0;
+        double deltaAngleRadians = (currentAngle*Math.PI + Math.PI * deltaAngleDegrees) / 180.0;
 
         double cosA = Math.Cos(deltaAngleRadians);
         double sinA = Math.Sin(deltaAngleRadians);
