@@ -80,13 +80,13 @@ public partial class MainWindowViewModel : GameBase
             if (Keyboard.Keys.Contains(Key.Up))
             {
 
-                ball.ChangeDirection(-45); //déviation vers le haut
+                ball.ChangeDirection_racket(-45); //déviation vers le haut
 
             }
             else if (Keyboard.Keys.Contains(Key.Down))
             {
 
-                ball.ChangeDirection(45); //déviation vers le bas
+                ball.ChangeDirection_racket(45); //déviation vers le bas
 
             }
             else
@@ -95,7 +95,7 @@ public partial class MainWindowViewModel : GameBase
             }
             
         }
-        if (ball.Location.X == l_racket.Location.X+40 && ball.Location.Y >= l_racket.Location.Y-45 && ball.Location.Y <= l_racket.Location.Y+45)
+        if (ball.Location.X == l_racket.Location.X + 40 && ball.Location.Y >= l_racket.Location.Y - 45 && ball.Location.Y <= l_racket.Location.Y + 45)
         //Racket Gauche
         {
 
@@ -105,20 +105,21 @@ public partial class MainWindowViewModel : GameBase
             if (Keyboard.Keys.Contains(Key.A))
             {
 
-                ball.ChangeDirection(45); //déviation vers le haut
-                
+                ball.ChangeDirection_racket(45); //déviation vers le haut
+
             }
             else if (Keyboard.Keys.Contains(Key.Q))
             {
 
-                ball.ChangeDirection(-45); //déviation vers le bas
-                
+                ball.ChangeDirection_racket(-45); //déviation vers le bas
+
             }
             else
             {
                 ball.ChangeVelocity();
             }
         }
+        
     }
     
 }

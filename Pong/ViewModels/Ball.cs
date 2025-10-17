@@ -19,19 +19,23 @@ public partial class Ball : GameObject {
     {
         Velocity = -Velocity;
     }
-    public void ChangeDirection(double deltaAngleDegrees = 45)
-{
-    // Convertir l'angle en radians
-    double deltaAngleRadians = Math.PI * deltaAngleDegrees / 180.0;
+    public void ChangeDirection_racket(double deltaAngleDegrees = 45)
+    {
+        // Convertir l'angle en radians
+        double deltaAngleRadians = Math.PI * deltaAngleDegrees / 180.0;
 
-    double cosA = Math.Cos(deltaAngleRadians);
-    double sinA = Math.Sin(deltaAngleRadians);
+        double cosA = Math.Cos(deltaAngleRadians);
+        double sinA = Math.Sin(deltaAngleRadians);
 
-    // Appliquer la rotation du vecteur vitesse
-    double newX = Velocity.X * cosA - Velocity.Y * sinA;
-    double newY = Velocity.X * sinA + Velocity.Y * cosA;
+        // Appliquer la rotation du vecteur vitesse
+        double newX = Velocity.X * cosA - Velocity.Y * sinA;
+        double newY = Velocity.X * sinA + Velocity.Y * cosA;
 
-    Velocity = new Point(-newX, newY);
-}
+        Velocity = new Point(-newX, newY);
+    }
+public void ChangeDirection_wall()
+    {
+        Velocity = new Point(Velocity.X, -Velocity.Y);
+    }
 
 }
