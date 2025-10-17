@@ -36,17 +36,6 @@ public partial class MainWindowViewModel : GameBase
     protected override void Tick()
     {
         ball.Tick();
-        if (ball.Location.X >= Width - 100) //Droite
-        {
-            ball.ChangeVelocity();
-        }
-        if (ball.Location.X <= 70) //Gauche
-        {
-            ball.ChangeVelocity();
-        }
-    }
-    protected override void Update()
-    {
         //Racket Gauche
         if (Keyboard.Keys.Contains(Key.A))
         {
@@ -77,5 +66,16 @@ public partial class MainWindowViewModel : GameBase
             
         }
 
+    
+
+        if (ball.Location.X >= Width - 100) //Droite
+        {
+            ball.ChangeVelocity();
+        }
+        if (ball.Location.X <=35) //Gauche
+        {
+            ball.ChangeVelocity();
+        }
     }
+    
 }
