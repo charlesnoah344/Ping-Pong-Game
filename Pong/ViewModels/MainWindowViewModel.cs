@@ -119,7 +119,11 @@ public partial class MainWindowViewModel : GameBase
                 ball.ChangeVelocity();
             }
         }
-        
+        //gestion des changement de direction sur les murs
+        if (ball.Location.Y <= 0 || ball.Location.Y >= 390 )
+        {
+            ball.ChangeDirection_wall();
+        }
     }
     
 }
