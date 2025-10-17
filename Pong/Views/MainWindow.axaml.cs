@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Input;
+using Pong.ViewModels;
 
 namespace Pong.Views;
 

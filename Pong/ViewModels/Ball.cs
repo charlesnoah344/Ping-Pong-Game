@@ -5,13 +5,18 @@ namespace Pong.ViewModels;
 
 public partial class Ball : GameObject {
     [ObservableProperty]
-    private Point velocity = new Point(1.0, 0);
+    private Point velocity = new Point(5.0, 0);
 
     public Ball(Point location) : base(location) {
 
     }
 
-    public void Tick() {
+    public void Tick()
+    {
         Location = Location + Velocity;
+    }
+    public void ChangeVelocity()
+    {
+        Velocity = -Velocity;
     }
 }

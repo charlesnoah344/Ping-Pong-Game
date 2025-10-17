@@ -32,6 +32,16 @@
                     Source="/Assets/Ball.png" />
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vm:R_racket}">
+                <Image Width="64" Height="64"
+                    Source="/Assets/right_racket.jpeg" />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:L_racket}">
+                <Image Width="64" Height="64"
+                    Source="/Assets/left_racket.jpeg" />
+            </DataTemplate>
+
         </ItemsControl.DataTemplates>
     </ItemsControl>
 </Window>

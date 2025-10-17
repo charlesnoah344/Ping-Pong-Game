@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using Avalonia.Threading;
 
 namespace Pong.ViewModels;
@@ -21,10 +22,12 @@ public abstract class GameBase: ViewModelBase
     private void DoTick()
     {
         Tick();
+        Update();
         CurrentTick++;
     }
 
     protected abstract void Tick();
+    protected abstract void Update();
 
     // Appelé dans App.axaml.cs
     public void Start()
