@@ -28,8 +28,8 @@
 
         <ItemsControl.DataTemplates>
             <DataTemplate DataType="{x:Type vm:Ball}">
-                <Image Width="64" Height="64"
-                    Source="/Assets/Ball.png" />
+                <Image Width="32" Height="32"
+                    Source="/Assets/ball_square.jpg" />
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type vm:R_racket}">

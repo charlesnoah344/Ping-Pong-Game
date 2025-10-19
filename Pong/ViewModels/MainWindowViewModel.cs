@@ -11,6 +11,7 @@ public partial class MainWindowViewModel : GameBase
 {
     public int Width { get; } = 800;
     public int Height { get; } = 450;
+    public double size = 64;
     private Ball ball;
     private R_racket r_racket;
     private L_racket l_racket;
@@ -72,7 +73,7 @@ public partial class MainWindowViewModel : GameBase
     
         //INVERSION DU SENS DE LA VITESSE EN CAS DE COLLISION AVEC UNE RAQUETTE
         
-        if (ball.Location.X >= r_racket.Location.X - 45 && ball.Location.X <= r_racket.Location.X - 35 && ball.Location.Y >= r_racket.Location.Y-45 && ball.Location.Y <= r_racket.Location.Y+45)
+        if (ball.Location.X >= r_racket.Location.X - 20 && ball.Location.X <= r_racket.Location.X - 5 && ball.Location.Y >= r_racket.Location.Y-45 && ball.Location.Y <= r_racket.Location.Y+60)
         // Racket Droite
         {
             //GESTION DES BOUTONS AU CLAVIER POUR choisir la direction ou envoyer la balle
@@ -95,7 +96,7 @@ public partial class MainWindowViewModel : GameBase
             }
             
         }
-        else if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 45 && ball.Location.Y <= l_racket.Location.Y + 45)
+        else if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 35 && ball.Location.Y <= l_racket.Location.Y + 55)
         //Racket Gauche
         {
 
