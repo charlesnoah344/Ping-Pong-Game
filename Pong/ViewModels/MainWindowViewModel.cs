@@ -78,22 +78,19 @@ public partial class MainWindowViewModel : GameBase
         {
             //GESTION DES BOUTONS AU CLAVIER POUR choisir la direction ou envoyer la balle
 
-            if (Keyboard.Keys.Contains(Key.Up))
+            if (ball.Location.Y <= r_racket.Location.Y)
             {
 
                 ball.ChangeDirection_racket(-45); //déviation vers le haut
 
             }
-            else if (Keyboard.Keys.Contains(Key.Down))
+            else if (ball.Location.Y > r_racket.Location.Y)
             {
 
                 ball.ChangeDirection_racket(45); //déviation vers le bas
 
             }
-            else
-            {
-                ball.ChangeVelocity();
-            }
+            
             
         }
         else if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 35 && ball.Location.Y <= l_racket.Location.Y + 55)
