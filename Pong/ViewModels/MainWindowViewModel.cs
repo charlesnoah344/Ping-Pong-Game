@@ -95,7 +95,7 @@ public partial class MainWindowViewModel : GameBase
             }
             
         }
-        if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 45 && ball.Location.Y <= l_racket.Location.Y + 45)
+        else if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 45 && ball.Location.Y <= l_racket.Location.Y + 45)
         //Racket Gauche
         {
 
@@ -120,7 +120,7 @@ public partial class MainWindowViewModel : GameBase
             }
         }
         //gestion des changement de direction sur les murs
-        if (ball.Location.Y <= 0 || ball.Location.Y >= 390 )
+        else if (ball.Location.Y <= 0 || ball.Location.Y >= 390 )
         {
             ball.ChangeDirection_wall();
         }
