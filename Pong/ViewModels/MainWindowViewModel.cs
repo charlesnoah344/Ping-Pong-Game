@@ -115,7 +115,7 @@ public partial class MainWindowViewModel : GameBase
             
         }
         //gestion des changement de direction sur les murs
-        else if (ball.Location.Y <= 0 || ball.Location.Y >= 390 )
+        else if (ball.Location.Y <= 0 || ball.Location.Y >= 400 )
         {
             ball.ChangeDirection_wall();
         }
