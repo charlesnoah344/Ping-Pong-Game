@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.ObjectModel;
 using System.Security.Cryptography;
 using Avalonia.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 
 namespace Pong.ViewModels;
@@ -16,6 +17,15 @@ public partial class MainWindowViewModel : GameBase
     private R_racket r_racket;
     private L_racket l_racket;
 
+    [ObservableProperty]
+    private int scoreLeft;
+
+    [ObservableProperty]
+    private int scoreRight;
+
+    // Méthodes pour incrémenter
+    public void AddPointLeft() => ScoreLeft++;
+    public void AddPointRight() => ScoreRight++;
 
     // Liste des objets à afficher
     public ObservableCollection<GameObject> GameObjects { get; } = new();
