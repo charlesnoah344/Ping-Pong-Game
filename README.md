@@ -1,4 +1,4 @@
-# 🏓 Pong — Jeu d'exemple en C# avec Avalonia
+# 🏓 Pong — Jeu en C# avec Avalonia
 
 Un petit projet **Pong** développé en **C#** avec le framework multiplateforme **[Avalonia UI](https://avaloniaui.net/)**.  
 Ce dépôt illustre la séparation **interface graphique / logique métier (MVVM)** et sert de base pour l’apprentissage du développement d’applications graphiques modernes avec C#.
