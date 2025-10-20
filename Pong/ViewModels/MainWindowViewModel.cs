@@ -81,13 +81,13 @@ public partial class MainWindowViewModel : GameBase
             if (ball.Location.Y <= r_racket.Location.Y)
             {
 
-                ball.ChangeDirection_racket(-45); //déviation vers le haut
+                ball.ChangeVelocity(); //déviation vers le haut
 
             }
             else if (ball.Location.Y > r_racket.Location.Y)
             {
 
-                ball.ChangeDirection_racket(45); //déviation vers le bas
+                ball.ChangeVelocity();; //déviation vers le bas
 
             }
             
@@ -100,22 +100,19 @@ public partial class MainWindowViewModel : GameBase
             //GESTION DES BOUTONS AU CLAVIER POUR choisir la direction ou envoyer la balle
 
             //Racket Gauche
-            if (Keyboard.Keys.Contains(Key.A))
+            if (ball.Location.Y <= l_racket.Location.Y)
             {
 
-                ball.ChangeDirection_racket(45); //déviation vers le haut
+                ball.ChangeVelocity(); //déviation vers le haut
 
             }
-            else if (Keyboard.Keys.Contains(Key.Q))
+            else if (ball.Location.Y > l_racket.Location.Y)
             {
 
-                ball.ChangeDirection_racket(-45); //déviation vers le bas
+                ball.ChangeVelocity(); //déviation vers le bas
 
             }
-            else
-            {
-                ball.ChangeVelocity();
-            }
+            
         }
         //gestion des changement de direction sur les murs
         else if (ball.Location.Y <= 0 || ball.Location.Y >= 390 )

@@ -5,7 +5,7 @@ using System;
 
 public partial class Ball : GameObject {
     [ObservableProperty]
-    private Point velocity = new Point(5.0, 0);
+    private Point velocity = new Point(2.0, 2.0); //trajectoire initiale à 45 dégré
 
     public Ball(Point location) : base(location) {
 
@@ -17,13 +17,12 @@ public partial class Ball : GameObject {
     }
     public void ChangeVelocity()
     {
-        Velocity = -Velocity;
+        Velocity = new Point(-Velocity.X, Velocity.Y);
     }
     public void ChangeDirection_racket(double deltaAngleDegrees = 45)
     {
-        double currentAngle = Math.Atan2(Velocity.Y, Velocity.X); // en radians
         // Convertir l'angle en radians
-        double deltaAngleRadians = (currentAngle*Math.PI + Math.PI * deltaAngleDegrees) / 180.0;
+        double deltaAngleRadians = Math.PI * deltaAngleDegrees / 180.0;
 
         double cosA = Math.Cos(deltaAngleRadians);
         double sinA = Math.Sin(deltaAngleRadians);
