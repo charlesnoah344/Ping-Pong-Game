@@ -132,7 +132,7 @@ public partial class MainWindowViewModel : GameBase
         {
             ball.ChangeDirection_wall();
         }
-        else if (ball.Location.X < 0)
+        else if (ball.Location.X < -50)
         {
             AddPointLeft();
             reset_ball();
