@@ -5,7 +5,7 @@ using System;
 
 public partial class Ball : GameObject {
     [ObservableProperty]
-    private Point velocity = new Point(2.0, 2.0); //trajectoire initiale à 45 dégré
+    private Point velocity = new Point(3.0, 3.0); //trajectoire initiale à 45 dégré
 
     public Ball(Point location) : base(location) {
 
