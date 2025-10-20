@@ -12,7 +12,6 @@ public partial class MainWindowViewModel : GameBase
 {
     public int Width { get; } = 800;
     public int Height { get; } = 450;
-    public double size = 64;
     private Ball ball;
     private R_racket r_racket;
     private L_racket l_racket;
@@ -44,7 +43,11 @@ public partial class MainWindowViewModel : GameBase
         GameObjects.Add(r_racket);
     }
 
-
+    public void reset_ball()
+    {
+        ball = new Ball(new Point(Width / 2 - 32, Height / 2 - 32));
+        GameObjects.Add(ball);
+    }
     protected override void Tick()
     {
         ball.Tick();
@@ -80,10 +83,10 @@ public partial class MainWindowViewModel : GameBase
 
         }
 
-    
+
         //INVERSION DU SENS DE LA VITESSE EN CAS DE COLLISION AVEC UNE RAQUETTE
-        
-        if (ball.Location.X >= r_racket.Location.X - 20 && ball.Location.X <= r_racket.Location.X - 5 && ball.Location.Y >= r_racket.Location.Y-45 && ball.Location.Y <= r_racket.Location.Y+60)
+
+        if (ball.Location.X >= r_racket.Location.X - 20 && ball.Location.X <= r_racket.Location.X - 5 && ball.Location.Y >= r_racket.Location.Y - 45 && ball.Location.Y <= r_racket.Location.Y + 60)
         // Racket Droite
         {
             //GESTION DES BOUTONS AU CLAVIER POUR choisir la direction ou envoyer la balle
@@ -97,11 +100,11 @@ public partial class MainWindowViewModel : GameBase
             else if (ball.Location.Y > r_racket.Location.Y)
             {
 
-                ball.ChangeVelocity();; //déviation vers le bas
+                ball.ChangeVelocity(); ; //déviation vers le bas
 
             }
-            
-            
+
+
         }
         else if (ball.Location.X >= l_racket.Location.X + 35 && ball.Location.X <= l_racket.Location.X + 45 && ball.Location.Y >= l_racket.Location.Y - 35 && ball.Location.Y <= l_racket.Location.Y + 55)
         //Racket Gauche
@@ -122,12 +125,22 @@ public partial class MainWindowViewModel : GameBase
                 ball.ChangeVelocity(); //déviation vers le bas
 
             }
-            
+
         }
         //gestion des changement de direction sur les murs
-        else if (ball.Location.Y <= 0 || ball.Location.Y >= 400 )
+        else if (ball.Location.Y <= 0 || ball.Location.Y >= 400)
         {
             ball.ChangeDirection_wall();
+        }
+        else if (ball.Location.X < 0)
+        {
+            AddPointLeft();
+            reset_ball();
+        }
+        else if (ball.Location.X > 800)
+        {
+            AddPointRight();
+            reset_ball();
         }
     }
     

@@ -19,7 +19,7 @@ public partial class Ball : GameObject {
     {
         Velocity = new Point(-Velocity.X, Velocity.Y);
     }
-public void ChangeDirection_wall()
+    public void ChangeDirection_wall()
     {
         Velocity = new Point(Velocity.X, -Velocity.Y);
     }
