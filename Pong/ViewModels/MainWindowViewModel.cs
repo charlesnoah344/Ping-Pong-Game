@@ -134,12 +134,12 @@ public partial class MainWindowViewModel : GameBase
         }
         else if (ball.Location.X < -50)
         {
-            AddPointLeft();
+            AddPointRight();
             reset_ball();
         }
         else if (ball.Location.X > 800)
         {
-            AddPointRight();
+            AddPointLeft();
             reset_ball();
         }
     }
