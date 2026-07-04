@@ -3,6 +3,10 @@
 Un petit projet **Pong** développé en **C#** avec le framework multiplateforme **[Avalonia UI](https://avaloniaui.net/)**.  
 Ce dépôt illustre la séparation **interface graphique / logique métier (MVVM)** et sert de base pour l’apprentissage du développement d’applications graphiques modernes avec C#.
 
+## Démo
+
+[Demo](https://youtu.be/v34ZNnFUOKk)
+
 ---
 
 ## ✨ Fonctionnalités principales
